@@ -1,0 +1,30 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+
+	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.0.2"
+}
+
+task cleanJavaScriptResources(type: Delete) {
+	delete "$buildDir/resources/main/META-INF/resources/lib"
+}
+
+task updateJavaScriptTags {
+	doLast {
+		def jspPath = "$buildDir/resources/main/META-INF/resources/bottom_js.jsp"
+		def jspFile = new File(jspPath)
+		def tags = new StringBuilder()
+		fileTree("src/main/resources/META-INF/resources/dist").matching {
+			include "**/*.js"
+		}.visit { FileVisitDetails details ->
+			tags.append("<script src=\"/o/simple-blog-list/dist/$details.file.name\"></script>\n")
+
+		}
+		jspFile.write(tags.toString(), "UTF-8")
+		println "Added the following script tags:\n"
+		println tags.toString()
+		println "to $jspPath"
+	}
+}
+
+packageRunBuild.finalizedBy cleanJavaScriptResources
+cleanJavaScriptResources.finalizedBy updateJavaScriptTags

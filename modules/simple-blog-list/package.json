@@ -1,0 +1,68 @@
+{
+  "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "@clayui/alert": "^3.31.0",
+    "@clayui/button": "^3.6.0",
+    "@clayui/card": "^3.31.0",
+    "@clayui/loading-indicator": "^3.2.0",
+    "apollo-boost": "^0.4.9",
+    "apollo-link-context": "^1.0.20",
+    "buffer": "^6.0.3",
+    "core-js": "^3.15.2",
+    "date-fns": "^2.22.1",
+    "graphql": "^15.5.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-text-truncate": "^0.16.0",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "@clayui/css": "^3.31.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.6",
+    "dotenv": "^10.0.0",
+    "dotenv-webpack": "^7.0.3",
+    "esbuild-loader": "^2.13.1",
+    "fs-extra": "^10.0.0",
+    "html-webpack-plugin": "^5.3.2",
+    "node-sass": "^6.0.1",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "rimraf": "^3.0.2",
+    "sass": "^1.35.2",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.0.0",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "name": "simple-blog-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "npm run clean && webpack --config webpack.prod.js && node postbuild.js",
+    "clean": "rimraf src/main/resources/META-INF/resources/dist"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

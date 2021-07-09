@@ -1,0 +1,5 @@
+Bundle-Name: Liferay React Webpack (Demo) - Simple Blog List
+Bundle-SymbolicName: com.github.lgdd.liferay.simple.blog.list
+Bundle-Version: 1.0.0
+Export-Package: com.github.lgdd.liferay.simple.blog.list.constants
+Web-ContextPath: /simple-blog-list

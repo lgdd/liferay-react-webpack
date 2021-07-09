@@ -1,0 +1,9 @@
+.gradle/
+.sass-cache/
+target/
+build/*
+dist/*
+node_modules/*
+liferay-npm-bundler-report.html
+.env
+src/main/resources/META-INF/resources/dist/*
